@@ -29,6 +29,17 @@ public class controller {
                           @RequestParam("tanggal")@DateTimeFormat(pattern="yyyy-MM-dd") Date date,
                           @RequestParam("image")MultipartFile file, Model Data)
                           throws IOException, ParseException {
+                String blob = Base64.encodeBase64String(file.getBytes());
+        String gambar = "data:image/jpeg;base64,".concat(blob);
         
+        SimpleDateFormat tanggal = new SimpleDateFormat("EE/dd/MMMM/yyyy");
+        String newTanggal = tanggal.format(date);
+       
+        Data.addAttribute("name", text);
+        Data.addAttribute("tnggl", newTanggal);
+        Data.addAttribute("image", gambar);
+        
+        
+        return "home";
     }
 }
