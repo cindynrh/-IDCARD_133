@@ -11,20 +11,20 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Data Mahasiswa</h1>
+        <h1>Hasil Data Mahasiswa</h1>
         <hr>
         <table border="1">
             <thead>
                 <tr>
-                    <td>Name</td>
                     <td>Date of Birth</td>
+                    <td>Name</td>
                     <td>Image</td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                     <td th:text="${name}"></td>
                      <td th:text="${tnggl}"></td>
+                     <td th:text="${name}"></td>
                      <td> <img th:src="${image}"> </td>
                 </tr>
             </tbody>
