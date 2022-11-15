@@ -25,14 +25,14 @@ import org.springframework.web.multipart.MultipartFile;
 public class controller {
     
     @RequestMapping ("/getData")
-    public String getData(@RequestParam("nama")String text,
-                          @RequestParam("tanggal")@DateTimeFormat(pattern="yyyy-MM-dd") Date date,
+    public String getData(@RequestParam("name")String text,
+                          @RequestParam("tnggl")@DateTimeFormat(pattern="yyyy-MM-dd") Date date,
                           @RequestParam("image")MultipartFile file, Model Data)
                           throws IOException, ParseException {
                 String blob = Base64.encodeBase64String(file.getBytes());
         String gambar = "data:image/jpeg;base64,".concat(blob);
         
-        SimpleDateFormat tanggal = new SimpleDateFormat("EE/dd/MMMM/yyyy");
+        SimpleDateFormat tanggal = new SimpleDateFormat("dd/MMMM/yyyy");
         String newTanggal = tanggal.format(date);
        
         Data.addAttribute("name", text);
