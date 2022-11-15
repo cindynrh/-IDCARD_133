@@ -39,7 +39,6 @@ public class controller {
         Data.addAttribute("tnggl", newTanggal);
         Data.addAttribute("image", gambar);
         
-        
         return "home";
     }
 }
